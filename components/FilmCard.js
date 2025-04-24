@@ -7,6 +7,45 @@ export default function FilmCard({ film }) {
   return (
     <View style={styles.card}>
       <Image source={{ uri: film.image }} style={styles.image} />
+
+      <View style={styles.info}>
+        <Text style={styles.title}>
+          {film.title ?? "Título não disponível"}
+        </Text>
+
+        <Text style={styles.subtitle}>
+          {film.original_title ?? "Título original não disponível"}
+        </Text>
+
+        <Text style={styles.subtitleSmall}>
+          {film.original_title_romanised ?? "Título romanizado não disponível"}
+        </Text>
+
+        <Text style={styles.text}>
+          📝{film.description ?? "Descrição não disponível"}
+        </Text>
+
+        <Text style={styles.text}>
+          🎬 Director: {film.director ?? "Não informado"}
+        </Text>
+
+        <Text style={styles.text}>
+          👤 Produtor: {film.producer ?? "Não informado"}
+        </Text>
+
+        <Text style={styles.text}>
+          📅 Lançamento: {film.release_date ?? "Não informado"}
+        </Text>
+
+        <Text style={styles.text}>
+          ⏰ Duração: {film.running_time ?? "Não informado"} min
+        </Text>
+
+        <Text style={styles.text}>
+          ⭐ Nota: {film.rt_score ?? "Não informado"}/100
+        </Text>
+
+      </View>
     </View>
   );
 }
